@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>长沙银行乐团圆</title>
+    <script>
+        function adapt(designWidth, designHeight){
+          var rem2px = designWidth / 16;
+          var d = window.document.createElement('div');
+          d.style.width = '1rem';
+          d.style.display = "none";
+          var head = window.document.getElementsByTagName('head')[0];
+          head.appendChild(d);
+          var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
+          d.remove();
+
+          var wid;
+          var bh = window.innerHeight / designHeight;
+          var bw = window.innerWidth / designWidth;
+          var iw = designWidth / window.innerWidth;
+          var ih = designHeight / window.innerHeight
+          if(iw - ih > 0.3){
+              document.documentElement.className += 'ipx';
+          }
+          // console.log(iw - ih)
+          wid = bh < bw ? (designWidth * window.innerHeight / designHeight) : (window.innerWidth);
+          document.documentElement.style.fontSize = wid / designWidth * rem2px / defaultFontSize * 100 + '%';
+          return defaultFontSize
+        };
+
+        var defaultFontSize = adapt(750, 1210);
+    </script>
+    <script type="text/javascript">
+      var Global = {}
+      Global.openid = '{$openid}';
+      Global.nickname = '';
+      Global.headimgurl = '';
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
