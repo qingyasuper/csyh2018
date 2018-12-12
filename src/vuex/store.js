@@ -7,12 +7,17 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    userinfo: {}
+    userinfo: {},
+    erinfo: ''
   },
   mutations: {
     uInfo: (state, data) => {
       const obj = state
       obj.userinfo = data
+    },
+    eInfo: (state, data) => {
+      const obj = state
+      obj.erinfo = data
     }
   }
 })

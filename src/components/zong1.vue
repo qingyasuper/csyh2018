@@ -11,9 +11,6 @@
 export default {
   name: 'zh1',
   components: {
-    userinfo () {
-      return this.$store.state.userinfo
-    }
   },
   data () {
     return {
@@ -21,9 +18,16 @@ export default {
   },
   mounted () {
     let that = this
-    console.log(that.$store.state.userinfo)
+    that.checkLogin(that.userinfo, function () {
+      if (that.userinfo.type !== 0) {
+        that.$router.push('/')
+      }
+    })
   },
   computed: {
+    userinfo () {
+      return this.$store.state.userinfo
+    }
   },
   methods: {
     ret (u) {
