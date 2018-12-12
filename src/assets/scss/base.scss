@@ -229,4 +229,190 @@ body{
 	left: 0;
 	right: 0;bottom: 0;
 	top:0;
+	box-sizing: border-box;
+	padding-top: 2.837rem;
+	.cs_er_return{
+		width: 6.72rem;
+		height: 1.451rem;
+		display: block;margin:0.64rem auto 0;
+	}
+}
+#qrcode{
+	width: 6.891rem;
+	height: 6.891rem;
+	overflow: hidden;
+	margin:auto;
+	text-align: center;
+	img{
+		width: 6.891rem;
+		height: 6.891rem;
+		display: block;
+	}
+}
+.tong{
+	padding-top: 3.477rem;
+	.cs_tong1{
+		width: 14.784rem;
+		height: 8.853rem;
+		margin:auto;
+		background:url(../images/cs_tong1.png) no-repeat center;
+		background-size: 100% 100%;
+		box-sizing: border-box;
+		padding-top: 0.725rem;
+		position: relative;
+		z-index: 2;
+		&:before{
+			content:'';
+			background:url(../images/cs_h.png) no-repeat center;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 0.235rem;
+			height: 1.109rem;
+			left: 0.96rem;
+			bottom: -0.64rem;
+		}
+		&:after{
+			content:'';
+			background:url(../images/cs_h.png) no-repeat center;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 0.235rem;
+			height: 1.109rem;
+			right: 0.96rem;
+			bottom: -0.64rem;
+		}
+		.cs_tong1_tit{
+			font-size: 0.555rem;
+			color: #2d2c2c;
+			text-align: center;
+			height: 1.237rem;
+			line-height: 1.237rem;
+		}
+		ul{
+			width: 12.16rem;
+			margin:auto;
+			li{
+				height: 1.612rem;
+				width: 100%;
+				display: block;
+				border-bottom: 1px dashed #626262;
+				text-align: left;
+				&:last-child{
+					border-bottom:none;
+				}
+				.cs_tong1_quan{
+					width: 5.333rem;
+					height: 1.3rem;
+					line-height: 1.3rem;
+					color: #fff;
+					background:#f42c3c;
+					display: inline-block;
+					vertical-align: top;
+					border-radius: 8px;
+					text-align: center;
+					font-size: 0.469rem;
+					margin-top: .15rem;
+				}
+				.cs_tong1_num{
+					line-height: 1.612rem;
+					float: right;
+					color: #2d2c2c;
+					font-size: 0.512rem;
+				}
+			}
+		}
+	}
+	.cs_tong2{
+		width: 14.784rem;
+		height: 8.853rem;
+		margin:auto;
+		background:url(../images/cs_tong1.png) no-repeat center;
+		background-size: 100% 100%;
+		box-sizing: border-box;
+		padding-top: 0.725rem;
+		position: relative;
+		z-index: 2;
+		&:before{
+			content:'';
+			background:url(../images/cs_h.png) no-repeat center;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 0.235rem;
+			height: 1.109rem;
+			left: 0.96rem;
+			bottom: -0.64rem;
+		}
+		&:after{
+			content:'';
+			background:url(../images/cs_h.png) no-repeat center;
+			background-size: 100% 100%;
+			position: absolute;
+			width: 0.235rem;
+			height: 1.109rem;
+			right: 0.96rem;
+			bottom: -0.64rem;
+		}
+		.cs_tong1_tit{
+			font-size: 0.555rem;
+			color: #2d2c2c;
+			text-align: center;
+			height: 1.237rem;
+			line-height: 1.237rem;
+		}
+		table{
+			width: 12.949rem;
+			margin:auto;
+			color: #2d2c2c;
+			font-size: 0.484rem;
+			border-color: #bfbfbf;
+			tr{
+				height:1.2rem;
+			}
+			thead{
+				background-color: #e5e5e5;
+			}
+		}
+	}
+	.cs_tong3{
+		width: 14.08rem;
+		height: 14.699rem;
+		margin:0.277rem auto 0;
+		background:url(../images/cs_tong2.png) no-repeat center;
+		background-size: 100% 100%;
+		box-sizing: border-box;
+		position: relative;
+		padding-top: 0.875rem;
+		z-index: 1;
+		.cs_tong3_scroll{
+			width: 100%;
+			height: 13.589rem;
+			margin:auto;
+			position: relative;
+			overflow: hidden;
+		}
+		ul{
+			position: relative;z-index: 99;
+			width: 100%;
+			li{
+				background-color: #db2920;
+				width: 4.352rem;height: 1.707rem;
+				display: inline-block;
+				vertical-align: top;
+				margin:0 0.128rem 0.299rem;
+				border-radius: 4px;
+				line-height: 1.707rem;
+				color: #fff;
+				font-size: 0.484rem;
+			}
+		}
+	}
+}
+.scroll-view {
+  touch-action: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
 }

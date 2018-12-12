@@ -2,6 +2,7 @@
   <div class='nav er'>
     <div class='er_body'>
       <div id="qrcode"></div>
+      <img src="../assets/images/cs_er_return.png" class='cs_er_return' @click='$emit("hide")'>
     </div>
   </div>
 </template>

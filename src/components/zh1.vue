@@ -21,13 +21,13 @@
         </div>
       </div>
     </div>
-    <img src="../assets/images/cs_zhi1_btn1.png" class='cs_zhi1_btn'>
+    <img src="../assets/images/cs_zhi1_btn1.png" class='cs_zhi1_btn' @click='ret("/tong")'>
     <img src="../assets/images/cs_zhi1_btn2.png" class='cs_zhi1_btn' @click='ret("/")'>
     <transition name="fade">
       <mong :msg='alertxt' v-show='isalert'></mong>
     </transition>
     <transition name="fade">
-      <er ref='er' v-show='ershow'></er>
+      <er ref='er' v-show='ershow' @hide='erhide'></er>
     </transition>
   </div>
 </template>
@@ -88,6 +88,10 @@ export default {
       setTimeout(function () {
         that.isalert = false
       }, 1500)
+    },
+    erhide () {
+      let that = this
+      that.ershow = false
     }
   }
 }
