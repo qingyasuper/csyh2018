@@ -4,6 +4,8 @@ import index from '@/components/index'
 import zh1 from '@/components/zh1'
 import zong1 from '@/components/zong1'
 import tong from '@/components/tong'
+import shang1 from '@/components/shang1'
+
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +29,11 @@ export default new Router({
       path: '/tong',
       name: '',
       component: tong
+    },
+    {
+      path: '/shang1',
+      name: '',
+      component: shang1
     }
   ]
 })

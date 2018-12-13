@@ -16,7 +16,8 @@ Vue.use(VueJsonp)
 Vue.use(IScrollView, IScroll)
 Vue.use(router)
 Vue.use(Vuex)
-Vue.prototype.Url = 'http://api.h5sina.com/csyh/index/'
+
+Vue.prototype.Url = 'http://bank.h5sina.com/csyh/index/'
 
 Vue.prototype.getQueryString = function (name) {
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
@@ -30,6 +31,10 @@ Vue.prototype.getQueryString = function (name) {
 
 Vue.prototype.checkLogin = function (data, callback = null) {
   var that = this
+  if (data.username === undefined) {
+    that.$router.push('/')
+    return
+  }
   that.$jsonp(that.Url + 'login', {
     username: data.username,
     password: data.psd

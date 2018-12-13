@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      name: '长沙银行桂花坪支行',
+      name: '',
       ershow: false,
       isalert: false,
       alertxt: ''
@@ -56,6 +56,7 @@ export default {
         that.$router.push('/')
       }
     })
+    that.name = that.userinfo.ascription
   },
   computed: {
     userinfo () {

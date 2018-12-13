@@ -78,7 +78,7 @@ export default {
             } else if (res.data.type === 1) {
               that.$router.push('zh1')
             } else if (res.data.type === 2) {
-              that.$router.push('zh1')
+              that.$router.push('shang1')
             }
           }
         }

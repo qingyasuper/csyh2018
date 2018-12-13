@@ -186,6 +186,9 @@ body{
 	.cs_zhi1_btn{
 		margin-top: 0;
 		margin-bottom: 1.707rem;
+		&.cs_shang1_btn2{
+			margin-bottom: 0.533rem;
+		}
 	}
 	.radio{
 		width: 0.213rem;
@@ -375,7 +378,7 @@ body{
 	}
 	.cs_tong3{
 		width: 14.08rem;
-		height: 14.699rem;
+		height: 12.699rem;
 		margin:0.277rem auto 0;
 		background:url(../images/cs_tong2.png) no-repeat center;
 		background-size: 100% 100%;
@@ -385,7 +388,7 @@ body{
 		z-index: 1;
 		.cs_tong3_scroll{
 			width: 100%;
-			height: 13.589rem;
+			height: 11.589rem;
 			margin:auto;
 			position: relative;
 			overflow: hidden;
@@ -406,6 +409,188 @@ body{
 			}
 		}
 	}
+	.cs_tong4{
+		width: 14.08rem;
+		height: 12.699rem;
+		margin:0.277rem auto 0;
+		background:url(../images/cs_tong2.png) no-repeat center;
+		background-size: 100% 100%;
+		box-sizing: border-box;
+		position: relative;
+		padding-top: 0.875rem;
+		z-index: 1;
+		.cs_tong4_scroll{
+			width: 100%;
+			height: 11.589rem;
+			margin:auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.cs_tong4_tit{
+			width: 13.525rem;
+			display: block;
+			text-align: left;
+			padding-left: 0.256rem;
+			box-sizing: border-box;
+		}
+		.cs_tong4_tit_num1{
+			color: #d82720;
+			font-size: 0.484rem;
+			width: 2.987rem;
+			height: 0.853rem;
+			box-sizing: border-box;
+			line-height: 0.853rem;
+			border:1px solid #d82720;
+			border-radius: 16px;
+			display: inline-block;vertical-align: top;
+			text-align: center;
+		}
+		.cs_tong4_tit_num2{
+			color: #2d2c2c;
+			font-size: 0.484rem;
+			height: 0.853rem;
+			box-sizing: border-box;
+			line-height: 0.853rem;
+			display: inline-block;vertical-align: top;
+			text-align: center;
+			margin-left: 0.32rem;
+		}
+		ul{
+			position: relative;
+			z-index: 99;
+			width: 100%;
+			margin-top: 0.341rem;
+			margin-bottom: 0.34rem;
+			li{
+				background-color: #fb6451;
+				width: 4.288rem;height: 1.003rem;
+				display: inline-block;
+				vertical-align: top;
+				margin:0 0.128rem 0.149rem;
+				border-radius: 4px;
+				line-height: 1.003rem;
+				color: #fff;
+				font-size: 0.484rem;
+			}
+		}
+	}
+	.cs_tong5{
+		width: 14.08rem;
+		height: 12.699rem;
+		margin:0.277rem auto 0;
+		background:url(../images/cs_tong2.png) no-repeat center;
+		background-size: 100% 100%;
+		box-sizing: border-box;
+		position: relative;
+		padding-top: 0.875rem;
+		z-index: 1;
+		.cs_tong5_scroll{
+			width: 100%;
+			height: 9.589rem;
+			margin:auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.cs_tong5_tit{
+			width: 13.525rem;
+			display: block;
+			text-align: left;
+			padding-left: 0.256rem;
+			box-sizing: border-box;
+		}
+		.cs_tong5_tit_num1{
+			color: #d82720;
+			font-size: 0.484rem;
+			width: 2.987rem;
+			height: 0.853rem;
+			box-sizing: border-box;
+			line-height: 0.853rem;
+			border:1px solid #d82720;
+			border-radius: 16px;
+			display: inline-block;vertical-align: top;
+			text-align: center;
+		}
+		.cs_tong5_tit_num2{
+			color: #2d2c2c;
+			font-size: 0.484rem;
+			height: 0.853rem;
+			box-sizing: border-box;
+			line-height: 0.853rem;
+			display: inline-block;vertical-align: top;
+			text-align: center;
+			margin-left: 0.32rem;
+		}
+		ul{
+			position: relative;
+			z-index: 99;
+			width: 100%;
+			margin-top: 0.341rem;
+			margin-bottom: 0.34rem;
+			li{
+				background-color: #fb6451;
+				width: 4.288rem;height: 1.003rem;
+				display: inline-block;
+				vertical-align: top;
+				margin:0 0.128rem 0.149rem;
+				border-radius: 4px;
+				line-height: 1.003rem;
+				color: #fff;
+				font-size: 0.484rem;
+			}
+		}
+		.cs_tong5_foot{
+			width: 100%;
+			text-align: center;
+			height: 1.237rem;
+			line-height: 1.237rem;
+			margin-top: 0.576rem;
+			i{
+				width: 0.533rem;height: 0.533rem;
+				display: inline-block;vertical-align: top;
+				border:1px solid #2d2c2c;
+				margin-top: 0.334rem;
+				&.active{
+					background-color: #2d2c2c;
+				}
+			}
+			.cs_tong5_btn{
+				width: 3.84rem;
+				height: 1.237rem;
+				background-color: #d0241f;
+				line-height: 1.237rem;
+				display: inline-block;vertical-align: top;
+				border-radius: 4px;
+				color: #fff;
+				font-size: 0.427rem;
+			}
+			span{
+				color: #2d2c2c;
+				font-size: 0.384rem;
+				display: inline-block;vertical-align: top;
+				margin:0 0.533rem;
+			}
+		}
+	}
+}
+.ipx .tong{
+	.cs_tong3{
+		height: 17.699rem;
+		.cs_tong3_scroll{
+			height: 16.589rem;
+		}
+	}
+	.cs_tong4{
+		height: 17.699rem;
+		.cs_tong4_scroll{
+			height: 16.589rem;
+		}
+	}
+	.cs_tong5{
+		height: 17.699rem;
+		.cs_tong5_scroll{
+			height: 14.589rem;
+		}
+	}
 }
 .scroll-view {
   touch-action: none;
@@ -415,4 +600,105 @@ body{
   left: 0;
   right: 0;
   overflow: hidden;
+}
+.shang1{
+	padding-top: 4.8rem;
+	.cs_shang1_tit{
+		font-size: 0.512rem;
+		color: #fff;text-align: left;
+		width: 14.123rem;
+		height: 0.853rem;
+		line-height: .853rem;
+		box-sizing: border-box;
+		margin-bottom: 0.896rem;
+		padding-left: 0.533rem;
+		position: relative;
+		&:before{
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 0.064rem;
+			background-color: #fff;
+			left: 0;
+			top:0;
+		}
+	}
+	input{
+		width: 14.123rem;
+		height: 2.133rem;
+		border:1px solid #f9dc71;
+		border-radius: 4px;
+		margin-bottom: 0.64rem;
+		color: #fff;
+		font-size: 0.469rem;
+		line-height: 2.133rem;
+		padding-left: 2.432rem;
+		box-sizing: border-box;
+		background:url('../images/cs_index_flag2.png') no-repeat 0.704rem center;
+		background-size: 0.661rem 0.768rem;
+		background-color: #bd1d14;
+		&::-webkit-input-placeholder{
+			color: #fff;
+		}
+	}
+}
+.cs_he1{
+	width: 10.347rem;
+	height: 12.352rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	background:url('../images/cs_he1.png') no-repeat center;
+	background-size: 100% 100%;
+	text-align: center;
+	padding-top: 3.456rem;
+	box-sizing: border-box;
+	span{
+		font-size: 0.612rem;
+		color: #fff;
+		display: block;
+	}
+	i{
+		color: #e12b21;
+		font-size: 0.804rem;
+		display: block;
+		margin:1.493rem auto 0;
+	}
+	img{
+		width: 6.763rem;
+		display: block;margin:3.029rem auto 0;
+	}
+}
+.cs_he2{
+	width: 10.347rem;
+	height: 12.352rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	background:url('../images/cs_er_body.png') no-repeat center;
+	background-size: 100% 100%;
+	text-align: center;
+	padding-top: 3.547rem;
+	box-sizing: border-box;
+	span{
+		font-size: 0.953rem;
+		color: #ffd957;
+		display: block;
+	}
+	i{
+		color: #fff;
+		font-size: 0.504rem;
+		display: block;
+		margin:.293rem auto 0;
+	}
+	img{
+		width: 6.763rem;
+		display: block;margin:3.229rem auto 0;
+	}
 }
