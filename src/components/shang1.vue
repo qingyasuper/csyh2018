@@ -4,7 +4,7 @@
     <input placeholder="请输入消费券密码" maxlength="12" v-model='key'>
     <img src="../assets/images/cs_shang1_btn1.png" class='cs_zhi1_btn' @click='shang1Btn'>
     <div class='radio'></div>
-    <img src="../assets/images/cs_shang1_btn2.png" class='cs_zhi1_btn cs_shang1_btn2' @click='ret("/tong")'>
+    <img src="../assets/images/cs_shang1_btn2.png" class='cs_zhi1_btn cs_shang1_btn2' @click='shang'>
     <img src="../assets/images/cs_zhi1_btn2.png" class='cs_zhi1_btn' @click='ret("/")'>
     <transition name="fade">
       <div class='nav' v-show='cs_he1'>
@@ -80,11 +80,10 @@ export default {
       var data = {
         key: that.key
       }
-      if (that.key.length <= 10) {
+      if (that.key.length > 10) {
         data.type = 1
       }
       that.$jsonp(that.Url + 'remove', data).then(function (res) {
-        console.log(res)
         if (res.state === 'success') {
           if (res.detail === '此卡已经核销!') {
             that.tips = '此卡已经核销!'
@@ -110,10 +109,20 @@ export default {
       setTimeout(function () {
         that.isalert = false
       }, 1500)
+    },
+    shang () {
+      let that = this
+      var data = {
+        type: 2,
+        up: 'cstong2',
+        down: 'cstong5',
+        tit: ''
+      }
+      that.$store.commit('tongInfo', data)
+      that.ret('tong')
     }
   }
 }
 </script>
-
 <style scoped>
 </style>

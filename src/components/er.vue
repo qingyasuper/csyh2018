@@ -8,6 +8,8 @@
 </template>
 <script>
 import QRCode from 'qrcodejs2'
+let Base64 = require('js-base64').Base64
+// let Base64 = require('js-base64').Base64
 
 export default {
   name: 'er',
@@ -32,12 +34,12 @@ export default {
     },
     init () {
       let that = this
-      var u = 'https://h5.nyjun.com/h5/ge2018?id=' + that.erinfo
+      var i = Base64.encode('cdkey=' + that.erinfo.cdkey + '&type=' + that.erinfo.type)
+      var u = that.uer + '?key=' + i
       that.qrcode(u)
     },
     qrcode (txt) {
       document.getElementById('qrcode').innerHTML = ''
-      console.log(txt)
       let qrcode = new QRCode('qrcode', {
         width: 100,
         height: 100,

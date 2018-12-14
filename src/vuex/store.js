@@ -8,7 +8,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     userinfo: {},
-    erinfo: ''
+    erinfo: {},
+    tongdata: {}
   },
   mutations: {
     uInfo: (state, data) => {
@@ -18,6 +19,10 @@ const store = new Vuex.Store({
     eInfo: (state, data) => {
       const obj = state
       obj.erinfo = data
+    },
+    tongInfo: (state, data) => {
+      const obj = state
+      obj.tongdata = data
     }
   }
 })

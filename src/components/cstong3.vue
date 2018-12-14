@@ -1,44 +1,10 @@
 <template>
   <div class='cs_tong3'>
     <div class='cs_tong3_scroll'>
-      <iscroll-view class='scroll-view' ref='iscroll' :options='scrollOptions'>
+      <iscroll-view class='scroll-view' ref='iscroll' :options='scrollOptions' v-if='msg.length!==0'>
         <ul>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
-          <li>21克拉烘培</li>
+          <li v-for='(item, index) in msg' :key='index' @click='shang(item)'>{{item.ascription}}</li>
+          <li v-if='msg.length % 3 !== 0' v-for='n in (3 - msg.length % 3)' :key='"c" + n' class="noborder"></li>
         </ul>
       </iscroll-view>
     </div>
@@ -50,6 +16,7 @@ export default {
   name: 'cstong3',
   components: {
   },
+  props: ['msg'],
   data () {
     return {
       scrollOptions: {
@@ -70,6 +37,10 @@ export default {
     ret (u) {
       let that = this
       that.$router.push({path: u})
+    },
+    shang (item) {
+      let that = this
+      that.$emit('shang', item)
     }
   }
 }

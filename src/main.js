@@ -18,6 +18,7 @@ Vue.use(router)
 Vue.use(Vuex)
 
 Vue.prototype.Url = 'http://bank.h5sina.com/csyh/index/'
+Vue.prototype.uer = 'http://www.h5sina.com/h5/csyhuser/'
 
 Vue.prototype.getQueryString = function (name) {
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')

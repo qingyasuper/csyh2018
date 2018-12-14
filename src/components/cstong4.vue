@@ -72,6 +72,7 @@ export default {
   name: 'cstong4',
   components: {
   },
+  props: ['msg'],
   data () {
     return {
       scrollOptions: {
@@ -82,6 +83,8 @@ export default {
     }
   },
   mounted () {
+    let that = this
+    console.log(that.msg)
   },
   computed: {
     userinfo () {

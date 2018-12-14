@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <img src="../assets/images/cs_zhi1_btn1.png" class='cs_zhi1_btn' @click='ret("/tong")'>
+    <img src="../assets/images/cs_zhi1_btn1.png" class='cs_zhi1_btn' @click='tong'>
     <img src="../assets/images/cs_zhi1_btn2.png" class='cs_zhi1_btn' @click='ret("/")'>
     <transition name="fade">
       <mong :msg='alertxt' v-show='isalert'></mong>
@@ -76,7 +76,11 @@ export default {
         if (res.detail) {
           that.vuealert(res.detail)
         } else {
-          that.$store.commit('eInfo', res.data.cdkey)
+          var d = {
+            cdkey: res.data.cdkey,
+            type: res.data.type
+          }
+          that.$store.commit('eInfo', d)
           that.$refs.er.init()
           that.ershow = true
         }
@@ -93,6 +97,18 @@ export default {
     erhide () {
       let that = this
       that.ershow = false
+    },
+    tong () {
+      let that = this
+      var data = {
+        type: 1,
+        up: 'cstong1',
+        down: 'cstong4',
+        tit: '',
+        id1: that.userinfo.id
+      }
+      that.$store.commit('tongInfo', data)
+      that.ret('tong')
     }
   }
 }

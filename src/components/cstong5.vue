@@ -1,5 +1,5 @@
 <template>
-  <div class='cs_tong5'>
+  <div class='cs_tong5' ref='cstong5'>
     <div class='cs_tong5_scroll'>
       <iscroll-view class='scroll-view' ref='iscroll' :options='scrollOptions'>
         <div class='cs_tong5_tit'>
@@ -8,28 +8,12 @@
         </div>
         <ul>
           <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
         </ul>
         <div class='cs_tong5_tit'>
           <span class='cs_tong5_tit_num1'>58元</span>
           <span class='cs_tong5_tit_num2'>1000张</span>
         </div>
         <ul>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
           <li>123456789012</li>
         </ul>
         <div class='cs_tong5_tit'>
@@ -38,28 +22,12 @@
         </div>
         <ul>
           <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
         </ul>
         <div class='cs_tong5_tit'>
           <span class='cs_tong5_tit_num1'>188元</span>
           <span class='cs_tong5_tit_num2'>1000张</span>
         </div>
         <ul>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
-          <li>123456789012</li>
           <li>123456789012</li>
         </ul>
       </iscroll-view>
@@ -74,9 +42,8 @@
 <script>
 
 export default {
-  name: 'cstong4',
-  components: {
-  },
+  name: 'cstong5',
+  props: ['msg'],
   data () {
     return {
       scrollOptions: {
@@ -91,12 +58,19 @@ export default {
   computed: {
     userinfo () {
       return this.$store.state.userinfo
+    },
+    cdkey () {
+      return this.msg
     }
   },
   methods: {
     ret (u) {
       let that = this
       that.$router.push({path: u})
+    },
+    init () {
+      let that = this
+      console.log(that.cdkey)
     }
   }
 }
