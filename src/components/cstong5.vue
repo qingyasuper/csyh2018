@@ -39,7 +39,7 @@
     <div class='cs_tong5_foot'>
       <i @click='all' :class='{active:allbtn}'></i>
       <span @click='all'>全部勾选</span>
-      <div class='cs_tong5_btn'>确认结算</div>
+      <div class='cs_tong5_btn' @click='sure'>确认结算</div>
     </div>
   </div>
 </template>
@@ -59,7 +59,11 @@ export default {
       a58: [],
       a88: [],
       a188: [],
-      allbtn: false
+      allbtn: false,
+      k18: 0,
+      k58: 0,
+      k88: 0,
+      k188: 0
     }
   },
   mounted () {
@@ -82,6 +86,10 @@ export default {
     },
     init () {
       let that = this
+      that.a18 = []
+      that.a58 = []
+      that.a88 = []
+      that.a188 = []
       for (var i = 0; i < that.cstongdata.length; i++) {
         if (that.cstongdata[i].type === 18) {
           that.a18.push(that.cstongdata[i])
@@ -101,22 +109,22 @@ export default {
       let that = this
       if (that.allbtn === false) {
         for (let i = 0; i < that.a18.length; i++) {
-          if (that.a18[i].state === 1) {
+          if (that.a18[i].state === 0) {
             that.a18[i].state = 2
           }
         }
         for (let i = 0; i < that.a58.length; i++) {
-          if (that.a58[i].state === 1) {
+          if (that.a58[i].state === 0) {
             that.a58[i].state = 2
           }
         }
         for (let i = 0; i < that.a88.length; i++) {
-          if (that.a88[i].state === 1) {
+          if (that.a88[i].state === 0) {
             that.a88[i].state = 2
           }
         }
         for (let i = 0; i < that.a188.length; i++) {
-          if (that.a188[i].state === 1) {
+          if (that.a188[i].state === 0) {
             that.a188[i].state = 2
           }
         }
@@ -124,26 +132,85 @@ export default {
       } else {
         for (let i = 0; i < that.a18.length; i++) {
           if (that.a18[i].state === 2) {
-            that.a18[i].state = 1
+            that.a18[i].state = 0
           }
         }
         for (let i = 0; i < that.a58.length; i++) {
           if (that.a58[i].state === 2) {
-            that.a58[i].state = 1
+            that.a58[i].state = 0
           }
         }
         for (let i = 0; i < that.a88.length; i++) {
           if (that.a88[i].state === 2) {
-            that.a88[i].state = 1
+            that.a88[i].state = 0
           }
         }
         for (let i = 0; i < that.a188.length; i++) {
           if (that.a188[i].state === 2) {
-            that.a188[i].state = 1
+            that.a188[i].state = 0
           }
         }
         that.allbtn = false
       }
+    },
+    sure () {
+      let that = this
+      if (that.allbtn === false) {
+        return
+      }
+      that.$emit('loadbtn')
+      let arr = []
+      for (let i = 0; i < that.a18.length; i++) {
+        if (that.a18[i].state === 2) {
+          arr.push(that.a18[i].cdkey)
+        }
+      }
+      for (let i = 0; i < that.a58.length; i++) {
+        if (that.a58[i].state === 2) {
+          arr.push(that.a58[i].cdkey)
+        }
+      }
+      for (let i = 0; i < that.a88.length; i++) {
+        if (that.a88[i].state === 2) {
+          arr.push(that.a88[i].cdkey)
+        }
+      }
+      for (let i = 0; i < that.a188.length; i++) {
+        if (that.a188[i].state === 2) {
+          arr.push(that.a188[i].cdkey)
+        }
+      }
+      if (arr.length === 0) {
+        that.$emit('loadbtn')
+        return
+      }
+      that.accounts(arr, 0)
+    },
+    accounts (arr, start) {
+      let that = this
+      let str = arr.slice(start, start + 10).join(',')
+      that.$jsonp(that.Url + 'accounts?data=' + str).then(function (res) {
+        that.k18 += res.k['18']
+        that.k58 += res.k['58']
+        that.k88 += res.k['88']
+        that.k188 += res.k['188']
+        if (arr.length > start + 10) {
+          that.accounts(arr, start + 10)
+        } else {
+          let data = {
+            k18: that.k18,
+            k58: that.k58,
+            k88: that.k88,
+            k188: that.k188
+          }
+          that.$emit('loadbtn')
+          that.allbtn = false
+          if (that.k18 === 0 && that.k58 === 0 && that.k88 === 0 && that.k188 === 0) {
+            return
+          }
+          that.$emit('account', data)
+        }
+      })
     }
   }
 }

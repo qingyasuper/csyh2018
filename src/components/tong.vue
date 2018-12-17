@@ -3,7 +3,23 @@
     <div class='return' @click='reu'>返回</div>
     <div :is='tongdata.up' :msg='up'>
     </div>
-    <div :is='tongdata.down' :msg='down' @shang='shanglist' ref='cstong5'>
+    <div :is='tongdata.down' :msg='down' @shang='shanglist' ref='cstong5' @account='accountfn' @loadbtn='loadfn'>
+    </div>
+    <div class='nav' v-show='accborder'>
+      <div class='accborder'>
+        <span class='acctit'>{{userinfo.ascription}}成功结算</span>
+        <ul>
+          <li>18元代金券{{accres.k18}}张，补贴{{accres.k18 * 12}}元</li>
+          <li>58元代金券{{accres.k58}}张，补贴{{accres.k58 * 45}}元</li>
+          <li>88元代金券{{accres.k88}}张，补贴{{accres.k88 * 70}}元</li>
+          <li>188元代金券{{accres.k188}}张，补贴{{accres.k188 * 150}}元</li>
+        </ul>
+        <span class='tips'>共计补贴{{accres.k18 * 12 + accres.k58 * 45 + accres.k88 * 70 + accres.k188 * 150}}元</span>
+        <img src="../assets/images/cs_er_return.png" @click='init'>
+      </div>
+    </div>
+    <div class='nav loading' v-show='loading'>
+      <span>正在计算数据，请稍后...</span>
     </div>
   </div>
 </template>
@@ -26,7 +42,15 @@ export default {
   data () {
     return {
       down: '',
-      up: ''
+      up: '',
+      accborder: false,
+      loading: false,
+      accres: {
+        k18: 0,
+        k58: 0,
+        k88: 0,
+        k188: 0
+      }
     }
   },
   mounted () {
@@ -51,6 +75,7 @@ export default {
     },
     init () {
       let that = this
+      that.accborder = false
       if (that.tongdata.down === 'cstong3') {
         that.$jsonp(that.Url + 'listInfo?type=' + that.tongdata.type).then(function (res) {
           if (res.state === 'success') {
@@ -135,6 +160,18 @@ export default {
       } else if (that.userinfo.type === 2) {
         that.$router.push('shang1')
       }
+    },
+    accountfn (res) {
+      let that = this
+      that.accres.k18 = res.k18
+      that.accres.k58 = res.k58
+      that.accres.k88 = res.k88
+      that.accres.k188 = res.k188
+      that.accborder = true
+    },
+    loadfn () {
+      let that = this
+      that.loading = !that.loading
     }
   }
 }

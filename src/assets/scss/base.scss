@@ -492,13 +492,13 @@ body{
 					pointer-events: none;
 				}
 				&.stka{
-					background-color: #ff21be;
+					color: #3fd62b;
 				}
 				&.check{
 					background-color: #8a8a8a;
 				}
 				&.ka{
-					background-color: #8a8a8a;
+					background-color: #fb6451;
 					box-shadow: 3px 3px 5px #555;
 				}
 			}
@@ -574,13 +574,13 @@ body{
 					pointer-events: none;
 				}
 				&.stka{
-					background-color: #ff21be;
+					color: #3fd62b;
 				}
 				&.check{
 					background-color: #8a8a8a;
 				}
 				&.ka{
-					background-color: #8a8a8a;
+					background-color: #fb6451;
 					box-shadow: 3px 3px 5px #555;
 				}
 			}
@@ -747,5 +747,62 @@ body{
 	img{
 		width: 6.763rem;
 		display: block;margin:3.229rem auto 0;
+	}
+}
+.accborder{
+	width: 10.347rem;
+	height: 12.352rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	background:url('../images/cs_er_body.png') no-repeat center;
+	background-size: 100% 100%;
+	text-align: center;
+	padding-top: 2.837rem;
+	box-sizing: border-box;
+	.acctit{
+		color: #fff;
+		font-size:0.527rem;
+	}
+	ul{
+		background-color: #fff;
+		color: #2d2c2c;
+		font-size:0.527rem;
+		text-align: center;
+		width: 8.832rem;
+		height: 4.393rem;
+		display: block;
+		margin:auto;
+		border-radius: 4px;
+		line-height: .9rem;
+		box-sizing:border-box;
+		padding-top: .5rem;
+		overflow: hidden;
+		li{
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+	.tips{
+		font-size: 0.612rem;
+		color: #ffd957;
+		margin-top: 0.491rem;
+		display: block;
+	}
+	img{
+		width: 6.72rem;
+		display: block;margin:0.491rem auto 0;
+	}
+}
+.loading{
+	span{
+		color: #fff;
+		display: block;margin-top: 8rem;
+		font-size: .6rem;
 	}
 }
