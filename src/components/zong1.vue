@@ -49,7 +49,8 @@ export default {
           type: 2,
           up: 'cstong2',
           down: 'cstong3',
-          tit: ''
+          tit: '',
+          to: 1
         }
       }
       that.$store.commit('tongInfo', data)

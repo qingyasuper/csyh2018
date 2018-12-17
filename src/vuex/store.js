@@ -9,7 +9,8 @@ const store = new Vuex.Store({
   state: {
     userinfo: {},
     erinfo: {},
-    tongdata: {}
+    tongdata: {},
+    cstongdata: []
   },
   mutations: {
     uInfo: (state, data) => {
@@ -23,6 +24,10 @@ const store = new Vuex.Store({
     tongInfo: (state, data) => {
       const obj = state
       obj.tongdata = data
+    },
+    tongdatainfo: (state, data) => {
+      const obj = state
+      obj.cstongdata = data
     }
   }
 })

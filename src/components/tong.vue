@@ -58,10 +58,13 @@ export default {
           }
         })
       }
-      if (that.tongdata.down === 'cstong5') {
-        that.$jsonp(that.Url + 'cdKey?id=' + that.userinfo.id).then(function (res) {
-          that.down = res.cdkey
-          console.log(that.down)
+      if (that.tongdata.down === 'cstong5' || that.tongdata.down === 'cstong4') {
+        let u = 'cdKey'
+        if (that.tongdata.s) {
+          u = 'cdKeyAll'
+        }
+        that.$jsonp(that.Url + u + '?id=' + that.tongdata.id5).then(function (res) {
+          that.$store.commit('tongdatainfo', res.cdkey)
           that.$refs.cstong5.init()
         })
       }
@@ -86,7 +89,11 @@ export default {
             id: that.tongdata.id2
           }
         }
-        that.$jsonp(that.Url + 'totalCar', data).then(function (res) {
+        let u = 'totalCar'
+        if (that.tongdata.to) {
+          u = 'keyTotal'
+        }
+        that.$jsonp(that.Url + u, data).then(function (res) {
           that.up = res
         })
       }
@@ -100,7 +107,10 @@ export default {
           up: 'cstong1',
           down: 'cstong4',
           tit: '',
-          id1: res.id
+          id1: res.id,
+          id5: res.id,
+          to: 1,
+          s: 1
         }
       } else if (res.type === 2) { // 商户
         data = {
@@ -108,7 +118,9 @@ export default {
           up: 'cstong2',
           down: 'cstong4',
           tit: '',
-          id2: res.id
+          id2: res.id,
+          id5: res.id,
+          to: 1
         }
       }
       that.$store.commit('tongInfo', data)

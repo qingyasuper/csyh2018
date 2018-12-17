@@ -6,34 +6,34 @@
         <tr>
           <td>金额</td>
           <td>总数</td>
-          <td>已核销</td>
-          <td>未核销</td>
+          <td>已结算</td>
+          <td>未结算</td>
         </tr>
       </thead>
       <tbody v-if='msg!==""'>
         <tr>
           <td>18元</td>
           <td>{{msg.data.total18}}</td>
-          <td>{{msg.data.car18}}</td>
-          <td>{{msg.data.total18 - msg.data.car18}}</td>
+          <td>{{msg.data.total18 - msg.data.count18}}</td>
+          <td>{{msg.data.count18}}</td>
         </tr>
         <tr>
           <td>58元</td>
           <td>{{msg.data.total58}}</td>
-          <td>{{msg.data.car58}}</td>
-          <td>{{msg.data.total58 - msg.data.car58}}</td>
+          <td>{{msg.data.total58 - msg.data.count58}}</td>
+          <td>{{msg.data.count58}}</td>
         </tr>
         <tr>
           <td>88元</td>
           <td>{{msg.data.total88}}</td>
-          <td>{{msg.data.car88}}</td>
-          <td>{{msg.data.total88 - msg.data.car88}}</td>
+          <td>{{msg.data.total88 - msg.data.count88}}</td>
+          <td>{{msg.data.count88}}</td>
         </tr>
         <tr>
           <td>188元</td>
           <td>{{msg.data.total188}}</td>
-          <td>{{msg.data.car188}}</td>
-          <td>{{msg.data.total188 - msg.data.car188}}</td>
+          <td>{{msg.data.total188 - msg.data.count188}}</td>
+          <td>{{msg.data.count188}}</td>
         </tr>
       </tbody>
     </table>

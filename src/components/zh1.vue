@@ -105,7 +105,9 @@ export default {
         up: 'cstong1',
         down: 'cstong4',
         tit: '',
-        id1: that.userinfo.id
+        id1: that.userinfo.id,
+        s: 1,
+        id5: that.userinfo.id
       }
       that.$store.commit('tongInfo', data)
       that.ret('tong')

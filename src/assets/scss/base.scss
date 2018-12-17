@@ -446,6 +446,7 @@ body{
 			text-align: left;
 			padding-left: 0.256rem;
 			box-sizing: border-box;
+			margin-bottom: 0.341rem;
 		}
 		.cs_tong4_tit_num1{
 			color: #d82720;
@@ -473,7 +474,6 @@ body{
 			position: relative;
 			z-index: 99;
 			width: 100%;
-			margin-top: 0.341rem;
 			padding-bottom: 0.34rem;
 			border-bottom: 1px dashed #bfbfbf;
 			margin-bottom: 0.34rem;
@@ -487,6 +487,20 @@ body{
 				line-height: 1.003rem;
 				color: #fff;
 				font-size: 0.484rem;
+				&.noborder{
+					background:transparent;
+					pointer-events: none;
+				}
+				&.stka{
+					background-color: #ff21be;
+				}
+				&.check{
+					background-color: #8a8a8a;
+				}
+				&.ka{
+					background-color: #8a8a8a;
+					box-shadow: 3px 3px 5px #555;
+				}
 			}
 		}
 	}
@@ -513,6 +527,7 @@ body{
 			text-align: left;
 			padding-left: 0.256rem;
 			box-sizing: border-box;
+			margin-bottom: 0.341rem;
 		}
 		.cs_tong5_tit_num1{
 			color: #d82720;
@@ -540,7 +555,6 @@ body{
 			position: relative;
 			z-index: 99;
 			width: 100%;
-			margin-top: 0.341rem;
 			margin-bottom: 0.34rem;
 			padding-bottom: 0.34rem;
 			border-bottom: 1px dashed #bfbfbf;
@@ -554,6 +568,21 @@ body{
 				line-height: 1.003rem;
 				color: #fff;
 				font-size: 0.484rem;
+				overflow: hidden;
+				&.noborder{
+					background:transparent;
+					pointer-events: none;
+				}
+				&.stka{
+					background-color: #ff21be;
+				}
+				&.check{
+					background-color: #8a8a8a;
+				}
+				&.ka{
+					background-color: #8a8a8a;
+					box-shadow: 3px 3px 5px #555;
+				}
 			}
 		}
 		.cs_tong5_foot{
