@@ -1,5 +1,6 @@
 <template>
   <div class='pg zh1 zong1'>
+    <div class='changebtn' @click='ret("change")'>修改密码</div>
     <img src="../assets/images/cs_zong1_btn1.png" class='cs_zhi1_btn' @click='listInfo(2)'>
     <img src="../assets/images/cs_zong1_btn2.png" class='cs_zhi1_btn' @click='listInfo(1)'>
     <div class='radio'></div>

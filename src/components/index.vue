@@ -80,6 +80,8 @@ export default {
             } else if (res.data.type === 2) {
               that.$router.push('shang1')
             }
+          } else {
+            that.vuealert(res.detail)
           }
         }
       })

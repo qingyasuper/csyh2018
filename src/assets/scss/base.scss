@@ -453,6 +453,7 @@ body{
 			font-size: 0.484rem;
 			width: 2.987rem;
 			height: 0.853rem;
+			margin-right: .3rem;
 			box-sizing: border-box;
 			line-height: 0.853rem;
 			border:1px solid #d82720;
@@ -804,5 +805,28 @@ body{
 		color: #fff;
 		display: block;margin-top: 8rem;
 		font-size: .6rem;
+	}
+}
+
+.changebtn{
+	position: absolute;
+	top:1.2rem;
+	right: 1rem;
+	color: #c13729;
+	font-size: 0.5rem;
+	padding:.2rem .5rem;
+	background:#ffecac;
+	border-radius: 4px;
+}
+.change{
+	.return{
+		position: absolute;
+		top:1.2rem;
+		right: 1rem;
+		color: #c13729;
+		font-size: 0.5rem;
+		padding:.2rem .5rem;
+		background:#ffecac;
+		border-radius: 4px;
 	}
 }

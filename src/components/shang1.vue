@@ -1,5 +1,6 @@
 <template>
   <div class='pg zh1 zong1 shang1'>
+    <div class='changebtn' @click='ret("change")'>修改密码</div>
     <div class='cs_shang1_tit'>{{name}}</div>
     <input placeholder="请输入消费券密码" maxlength="12" v-model='key'>
     <img src="../assets/images/cs_shang1_btn1.png" class='cs_zhi1_btn' @click='shang1Btn'>

@@ -1,5 +1,6 @@
 <template>
   <div class='pg zh1'>
+    <div class='changebtn' @click='ret("change")'>修改密码</div>
     <div class='zh1_body'>
       <div class='zh1_name'>{{name}}</div>
       <div class='zh1_ka'>
