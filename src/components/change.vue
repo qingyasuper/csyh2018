@@ -30,8 +30,8 @@ export default {
     }
   },
   mounted () {
-    let that = this
-    that.checkLogin(that.userinfo, function () {})
+    // let that = this
+    // that.checkLogin(that.userinfo, function () {})
   },
   computed: {
     userinfo () {

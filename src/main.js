@@ -30,24 +30,6 @@ Vue.prototype.getQueryString = function (name) {
   }
 }
 
-Vue.prototype.checkLogin = function (data, callback = null) {
-  var that = this
-  if (data.username === undefined) {
-    that.$router.push('/')
-    return
-  }
-  that.$jsonp(that.Url + 'login', {
-    username: data.username,
-    password: data.psd
-  }).then(function (res) {
-    if (res.detail === '用户名不存在') {
-      that.$router.push('/')
-    } else {
-      callback()
-    }
-  })
-}
-
 Vue.prototype.setCookie = function (cName, value, expiredays) {
   var exdate = new Date()
   exdate.setDate(exdate.getDate() + expiredays)
@@ -81,4 +63,28 @@ new Vue({
   store,
   components: { App },
   template: '<App/>'
+})
+
+router.beforeEach(function (to, from, next) {
+  if (to.meta.requireAuth) {
+    var uf = store.state.userinfo
+    console.log(uf)
+    if (to.name === 'zhi1' && uf.type !== 1) {
+      next({
+        path: '/'
+      })
+    } else if (to.name === 'shang1' && uf.type !== 2) {
+      next({
+        path: '/'
+      })
+    } else if (to.name === 'zong1' && uf.type !== 0) {
+      next({
+        path: '/'
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })

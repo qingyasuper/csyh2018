@@ -13,33 +13,45 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: '',
+      name: 'index',
       component: index
     },
     {
       path: '/zh1',
-      name: '',
-      component: zh1
+      name: 'zh1',
+      component: zh1,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/zong1',
-      name: '',
-      component: zong1
+      name: 'zong1',
+      component: zong1,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/tong',
-      name: '',
+      name: 'tong',
       component: tong
     },
     {
       path: '/shang1',
-      name: '',
-      component: shang1
+      name: 'shang1',
+      component: shang1,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/change',
-      name: '',
-      component: change
+      name: 'change',
+      component: change,
+      meta: {
+        requireAuth: true
+      }
     }
   ]
 })

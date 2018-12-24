@@ -18,12 +18,12 @@ export default {
     }
   },
   mounted () {
-    let that = this
-    that.checkLogin(that.userinfo, function () {
-      if (that.userinfo.type !== 0) {
-        that.$router.push('/')
-      }
-    })
+    // let that = this
+    // that.checkLogin(that.userinfo, function () {
+    //   if (that.userinfo.type !== 0) {
+    //     that.$router.push('/')
+    //   }
+    // })
   },
   computed: {
     userinfo () {

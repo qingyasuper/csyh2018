@@ -55,11 +55,11 @@ export default {
   },
   mounted () {
     let that = this
-    that.checkLogin(that.userinfo, function () {
-      if (that.userinfo.type !== 2) {
-        that.$router.push('/')
-      }
-    })
+    // that.checkLogin(that.userinfo, function () {
+    //   if (that.userinfo.type !== 2) {
+    //     that.$router.push('/')
+    //   }
+    // })
     that.name = that.userinfo.ascription
   },
   computed: {
