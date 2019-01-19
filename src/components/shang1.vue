@@ -100,6 +100,9 @@ export default {
             that.yuan = res.type
             that.cs_he1 = true
           }
+        } else if (res.state === 'err') {
+          alert('您的登录已失效，请刷新页面重新登录')
+          that.ret('/')
         }
       })
     },
